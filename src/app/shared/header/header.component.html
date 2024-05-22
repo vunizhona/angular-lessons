@@ -1,0 +1,11 @@
+<p appAppHighlight color="blue">header works!</p>
+<p appAppHighlight color="green">header works 2!</p>
+
+
+<ul *ngIf="items.length">
+  <li *ngFor="let item of items; trackBy: trackByItemId">
+    {{ item.id }}: {{ item.name }}
+  </li>
+</ul>
+
+<button (click)="updateHeaderItems()">Update header items</button>

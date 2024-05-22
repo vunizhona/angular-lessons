@@ -1,0 +1,45 @@
+<!--<p>footer works!</p>-->
+<!--<button (click)="onFooterClick()">Footer button to check items</button>-->
+<h2>Form 1 - react</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <div>
+      <label>Username</label>
+      <input type="text"  formControlName="username" />
+      <div *ngIf="form.controls['username'].hasError('required')"> Username is required</div>
+      <div *ngIf="form.controls['username'].hasError('notSmallLetters')"> Not small letters</div>
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input type="text"  formControlName="email" />
+      <div *ngIf="form.controls['email'].hasError('required')"> Email is required</div>
+    </div>
+
+    <button type="submit">Submit</button>
+
+    <div>___________________________________________</div>
+
+    <h2>Form 2 - template</h2>
+
+    <form #userForm="ngForm" (ngSubmit)="onSubmitTemplateForm(userForm)">
+      <div>
+        <label>Username2</label>
+        <input name="username2" [(ngModel)]="user.username2" required minlength="5">
+      </div>
+
+      <div>
+        <label>Email2</label>
+        <input name="email2" [(ngModel)]="user.email2" required minlength="5">
+      </div>
+
+      <button type="submit">Submit2</button>
+
+
+    </form>
+
+
+  </form>
+
+
+<button (click)="onCheckStatus()" >Check Status</button>
