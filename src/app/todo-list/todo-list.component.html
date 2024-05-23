@@ -1,0 +1,5 @@
+<h2>todo-list </h2>
+<div *ngIf="error">{{error.message}}</div>
+<div *ngFor="let item of items">
+  <p>{{item.title}}</p>
+</div>
